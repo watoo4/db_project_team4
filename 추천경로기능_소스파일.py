@@ -6,6 +6,7 @@ end_point = input("도착 지점: ")
 try:
     op = webdriver.ChromeOptions()
     op.add_experimental_option('excludeSwitches',['enable-logging'])
+    op.add_argument('headless')
     wd = webdriver.Chrome('./chromedriver.exe',options=op)
     wd.get('https://map.naver.com/v5/directions/-/-/-/transit?c=14237419.6299418,4431807.5627088,15,0,0,0,dh')
     wd.implicitly_wait(5)
